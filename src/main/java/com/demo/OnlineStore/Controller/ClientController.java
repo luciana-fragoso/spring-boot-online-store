@@ -33,16 +33,22 @@ public class ClientController {
 
     }
 
-    @PostMapping("/edit")
-    @ResponseStatus(HttpStatus.OK)
-    public void editClient(@RequestBody ClientDto clientDto){
-        System.out.println(clientDto.getId());
-        clientService.edit(clientDto);
-    }
-
     @GetMapping("/list")
     public ResponseEntity<List<ClientDto>> getClients(){
         return ResponseEntity.ok(clientService.getClients());
+    }
+
+
+    @PostMapping("/edit")
+    @ResponseStatus(HttpStatus.OK)
+    public void editClient(@RequestBody ClientDto clientDto){
+        clientService.edit(clientDto);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public void delete(@PathVariable Long id){
+        clientService.delete(id);
     }
 
 

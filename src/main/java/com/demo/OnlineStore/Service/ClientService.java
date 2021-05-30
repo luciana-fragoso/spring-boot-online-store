@@ -59,4 +59,12 @@ public class ClientService {
     }
 
 
+    public void delete(Long id) {
+        try {
+           clientRepository.deleteById(id);
+        } catch(Exception e){
+            throw new NotFoundException("Client not found");
+        }
+    }
+
 }
