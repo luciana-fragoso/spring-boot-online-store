@@ -1,5 +1,6 @@
 package com.demo.OnlineStore.Controller.Dto;
 
+import com.demo.OnlineStore.Model.Item;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,9 +10,8 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ItemDto {
+public class OrderItemDto {
     private Long id;
-    private  String name;
-    private double price;
-
+    private Item item;
+    private int quantity;
 }

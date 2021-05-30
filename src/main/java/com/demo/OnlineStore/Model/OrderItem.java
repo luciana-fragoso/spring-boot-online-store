@@ -7,19 +7,18 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
-
+@Entity
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
+public class OrderItem {
 
-@Entity
 
-public class Client {
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String email;
-    private String password;
-
+    @OneToOne
+    private Item item;
+    private int quantity;
 }

@@ -1,11 +1,11 @@
 package com.demo.OnlineStore.Model;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Getter
@@ -14,12 +14,14 @@ import javax.persistence.*;
 @NoArgsConstructor
 
 @Entity
-
-public class Client {
+@Table(name = "`Order`")
+public class Order {
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String email;
-    private String password;
+    @ManyToOne
+    private Client client;
+    @OneToMany
+    private List<OrderItem> item;
 
 }

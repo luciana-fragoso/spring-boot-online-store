@@ -6,7 +6,7 @@ import com.demo.OnlineStore.Controller.Dto.ItemDto;
 import com.demo.OnlineStore.Exception.NotFoundException;
 import com.demo.OnlineStore.Model.Item;
 import com.demo.OnlineStore.Repository.ItemRepository;
-import org.dom4j.rule.Mode;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
